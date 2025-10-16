@@ -6,9 +6,16 @@ Tasks:
 Build:
 
     clang++ -O2 -o build/cpp-toeplitz-matrix src/cpp/toeplitz-matrix/main.cpp
+    clang++ -O2 -o build/cpp-toeplitz-matrix-unittests src/cpp/toeplitz-matrix/tests.cpp
+
     go build -o build/go-toeplitz-matrix src/go/toeplitz-matrix/main.go
 
-Run:
+Run unit tests:
+
+    ./build/cpp-toeplitz-matrix-unittests
+    go test -C ./src/go/toeplitz-matrix
+
+Run benchmarks:
 
     time ./build/cpp-toeplitz-matrix
     time ./build/go-toeplitz-matrix

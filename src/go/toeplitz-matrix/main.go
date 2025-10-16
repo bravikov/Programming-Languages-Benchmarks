@@ -7,9 +7,7 @@ import (
 func isToeplitzMatrix(matrix [][]int) bool {
     for row := 1; row < len(matrix); row++ {
         for col := 1; col < len(matrix[0]); col++ {
-            prev_row := row - 1
-            prev_col := col - 1
-            if matrix[prev_row][prev_col] != matrix[row][col] {
+            if matrix[row - 1][col - 1] != matrix[row][col] {
                 return false
             }
         }
